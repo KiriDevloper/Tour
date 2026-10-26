@@ -1,0 +1,20 @@
+{
+  "name": "tour_backend",
+  "version": "1.0.0",
+  "description": "API cho ứng dụng khám phá Buôn Ma Thuột",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "seed": "node --disable-warning=ExperimentalWarning db/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

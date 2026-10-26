@@ -1,0 +1,8 @@
+node_modules/
+
+# Cơ sở dữ liệu: chứa email và mã băm mật khẩu của người dùng, không đưa lên GitHub.
+# SQLite ở chế độ WAL còn tạo thêm file -wal và -shm nên dùng dấu * để bỏ qua tất cả.
+db/tour.db*
+
+.env
+*.log

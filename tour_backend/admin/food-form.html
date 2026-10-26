@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thêm / Sửa món ăn</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+      <main class="content">
+        <div class="d-flex align-items-center mb-3">
+          <h4 class="fw-bold mb-0 me-auto" id="pageTitle">Thêm món ăn</h4>
+          <a href="foods.html" id="backLink" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left"></i> Quay lại</a>
+        </div>
+
+        <div id="formAlert"></div>
+
+        <form id="foodForm" class="card-box" novalidate>
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label" for="f-name">Tên món ăn <span class="text-danger">*</span></label>
+                <input id="f-name" class="form-control" placeholder="Ví dụ: Bún đỏ" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="f-kind">Loại món ăn <span class="text-danger">*</span></label>
+                <input id="f-kind" class="form-control" list="kinds" placeholder="Chọn hoặc nhập loại" required>
+                <datalist id="kinds">
+                  <option value="Món đặc trưng"></option>
+                  <option value="Đặc sản"></option>
+                </datalist>
+                <div class="form-text">Loại này dùng làm bộ lọc "Tất cả / Món đặc trưng / Đặc sản" trong ứng dụng.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="f-place">Địa điểm liên quan (không bắt buộc)</label>
+                <select id="f-place" class="form-select"><option value="">-- Không gắn --</option></select>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label" for="f-image-file">Ảnh món ăn</label>
+              <div class="cover-box">
+                <input id="f-image-file" type="file" accept="image/jpeg,image/png,image/webp" class="form-control">
+                <div class="form-text">JPG, PNG, WEBP (tối đa 5MB)</div>
+                <input id="f-image" type="hidden">
+                <div id="imageWrap" class="mt-2 d-none">
+                  <img id="imagePreview" alt="" style="max-height:150px;border-radius:10px">
+                  <div><button type="button" id="removeImage" class="btn btn-link btn-sm text-danger px-0">Xóa ảnh</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label" for="f-short">Mô tả ngắn <span class="text-danger">*</span></label>
+              <input id="f-short" class="form-control" placeholder="Hiển thị trong danh sách món ăn" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="f-desc">Mô tả chi tiết <span class="text-danger">*</span></label>
+              <textarea id="f-desc" class="form-control" rows="7" placeholder="Nguồn gốc, hương vị, cách thưởng thức..." required></textarea>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <a href="foods.html" class="btn btn-outline-secondary">Hủy</a>
+            <button id="saveBtn" type="submit" class="btn btn-primary px-4">Lưu</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/food-form.js"></script>
+</body>
+</html>

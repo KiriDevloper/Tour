@@ -1,0 +1,12 @@
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Nhật ký, biến môi trường, khóa ký ứng dụng (TUYỆT ĐỐI không đưa lên GitHub)
+*.log
+.env
+.env.*
+*.jks
+*.keystore
+key.properties

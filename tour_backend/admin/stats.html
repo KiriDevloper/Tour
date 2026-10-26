@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thống kê</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/admin.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <div class="main">
+      <header id="topbar" class="topbar"></header>
+      <main class="content">
+        <div id="alerts"></div>
+
+        <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+          <h4 class="fw-bold mb-0 me-auto">Thống kê</h4>
+          <select id="period" class="form-select" style="max-width: 200px;">
+            <option value="">Tất cả thời gian</option>
+          </select>
+        </div>
+
+        <div class="row g-3 mb-4" id="cards"></div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-lg-7">
+            <div class="card-box h-100">
+              <div class="d-flex align-items-center mb-3">
+                <h6 class="fw-bold mb-0 me-auto">Địa điểm được yêu thích nhất</h6>
+                <small class="text-muted" id="favTotal"></small>
+              </div>
+              <div id="top"></div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="card-box h-100">
+              <h6 class="fw-bold mb-1">Thống kê theo loại địa điểm</h6>
+              <div class="text-muted small mb-3">Số địa điểm hiện có ở mỗi loại</div>
+              <div class="row align-items-center g-3">
+                <div class="col-sm-6"><canvas id="chartCategory" height="180"></canvas></div>
+                <div class="col-sm-6" id="legend"></div>
+              </div>
+              <div id="donutMsg" class="text-muted small"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-box">
+          <h6 class="fw-bold mb-1" id="seriesTitle">Hoạt động theo thời gian</h6>
+          <div class="text-muted small mb-3">Người dùng đăng ký mới và lượt yêu thích mới</div>
+          <canvas id="chartSeries" height="90"></canvas>
+          <div id="seriesMsg" class="text-muted small"></div>
+          <div id="undatedNote" class="alert alert-light border small mt-3 mb-0 d-none"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/stats.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Quản trị</title>
+</head>
+<body>
+  <script>
+    location.replace(localStorage.getItem('admin_token') ? 'dashboard.html' : 'login.html');
+  </script>
+</body>
+</html>
